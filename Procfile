@@ -1,1 +1,1 @@
-web: strapi
+web: node strapi start
