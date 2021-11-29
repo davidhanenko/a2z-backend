@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "size_prices",
   "info": {
-    "name": "size_price"
+    "name": "size_price",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,6 +17,9 @@
     },
     "price": {
       "type": "decimal"
+    },
+    "related_item": {
+      "type": "string"
     }
   }
 }

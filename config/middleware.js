@@ -3,6 +3,7 @@ module.exports = {
   settings: {
     cors: {
       origin: ['https://a2z-demo.herokuapp.com', 'http://localhost:7777'],
+      origin: ['http://localhost:1337', 'http://localhost:7777'],
     },
     // 10 Mb max upload file size
     parser: {

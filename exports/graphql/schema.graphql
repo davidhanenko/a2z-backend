@@ -609,6 +609,7 @@ type SizePrice {
   updated_at: DateTime!
   size: String
   price: Float
+  related_item: String
   published_at: DateTime
 }
 
@@ -649,6 +650,7 @@ type SizePriceGroupBy {
   updated_at: [SizePriceConnectionUpdated_at]
   size: [SizePriceConnectionSize]
   price: [SizePriceConnectionPrice]
+  related_item: [SizePriceConnectionRelated_item]
   published_at: [SizePriceConnectionPublished_at]
 }
 
@@ -677,6 +679,11 @@ type SizePriceConnectionPrice {
   connection: SizePriceConnection
 }
 
+type SizePriceConnectionRelated_item {
+  key: String
+  connection: SizePriceConnection
+}
+
 type SizePriceConnectionPublished_at {
   key: DateTime
   connection: SizePriceConnection
@@ -685,6 +692,7 @@ type SizePriceConnectionPublished_at {
 input SizePriceInput {
   size: String
   price: Float
+  related_item: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -693,6 +701,7 @@ input SizePriceInput {
 input editSizePriceInput {
   size: String
   price: Float
+  related_item: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1284,7 +1293,7 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | ItemsCategory | ItemsCategoryConnection | ItemsCategoryAggregator | ItemsCategoryGroupBy | ItemsCategoryConnectionId | ItemsCategoryConnectionCreated_at | ItemsCategoryConnectionUpdated_at | ItemsCategoryConnectionCategory_title | ItemsCategoryConnectionPublished_at | createItemsCategoryPayload | updateItemsCategoryPayload | deleteItemsCategoryPayload | Items | ItemsConnection | ItemsAggregator | ItemsGroupBy | ItemsConnectionId | ItemsConnectionCreated_at | ItemsConnectionUpdated_at | ItemsConnectionTitle | ItemsConnectionPublished_at | createItemPayload | updateItemPayload | deleteItemPayload | MainPageSlide | MainPageSlideConnection | MainPageSlideAggregator | MainPageSlideGroupBy | MainPageSlideConnectionId | MainPageSlideConnectionCreated_at | MainPageSlideConnectionUpdated_at | MainPageSlideConnectionSlogan | MainPageSlideConnectionDescription | MainPageSlideConnectionBg_image | MainPageSlideConnectionImage_1 | MainPageSlideConnectionImage_2 | MainPageSlideConnectionItem_title | MainPageSlideConnectionPublished_at | createMainPageSlidePayload | updateMainPageSlidePayload | deleteMainPageSlidePayload | Services | ServicesConnection | ServicesAggregator | ServicesGroupBy | ServicesConnectionId | ServicesConnectionCreated_at | ServicesConnectionUpdated_at | ServicesConnectionService | ServicesConnectionPublished_at | createServicePayload | updateServicePayload | deleteServicePayload | SingleItem | SingleItemConnection | SingleItemAggregator | SingleItemAggregatorSum | SingleItemAggregatorAvg | SingleItemAggregatorMin | SingleItemAggregatorMax | SingleItemGroupBy | SingleItemConnectionId | SingleItemConnectionCreated_at | SingleItemConnectionUpdated_at | SingleItemConnectionItem_title | SingleItemConnectionPrice | SingleItemConnectionDescription | SingleItemConnectionSize | SingleItemConnectionPublished_at | createSingleItemPayload | updateSingleItemPayload | deleteSingleItemPayload | SizePrice | SizePriceConnection | SizePriceAggregator | SizePriceAggregatorSum | SizePriceAggregatorAvg | SizePriceAggregatorMin | SizePriceAggregatorMax | SizePriceGroupBy | SizePriceConnectionId | SizePriceConnectionCreated_at | SizePriceConnectionUpdated_at | SizePriceConnectionSize | SizePriceConnectionPrice | SizePriceConnectionPublished_at | createSizePricePayload | updateSizePricePayload | deleteSizePricePayload | Tools | ToolsConnection | ToolsAggregator | ToolsGroupBy | ToolsConnectionId | ToolsConnectionCreated_at | ToolsConnectionUpdated_at | ToolsConnectionTool | ToolsConnectionPublished_at | createToolPayload | updateToolPayload | deleteToolPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | ItemsCategory | ItemsCategoryConnection | ItemsCategoryAggregator | ItemsCategoryGroupBy | ItemsCategoryConnectionId | ItemsCategoryConnectionCreated_at | ItemsCategoryConnectionUpdated_at | ItemsCategoryConnectionCategory_title | ItemsCategoryConnectionPublished_at | createItemsCategoryPayload | updateItemsCategoryPayload | deleteItemsCategoryPayload | Items | ItemsConnection | ItemsAggregator | ItemsGroupBy | ItemsConnectionId | ItemsConnectionCreated_at | ItemsConnectionUpdated_at | ItemsConnectionTitle | ItemsConnectionPublished_at | createItemPayload | updateItemPayload | deleteItemPayload | MainPageSlide | MainPageSlideConnection | MainPageSlideAggregator | MainPageSlideGroupBy | MainPageSlideConnectionId | MainPageSlideConnectionCreated_at | MainPageSlideConnectionUpdated_at | MainPageSlideConnectionSlogan | MainPageSlideConnectionDescription | MainPageSlideConnectionBg_image | MainPageSlideConnectionImage_1 | MainPageSlideConnectionImage_2 | MainPageSlideConnectionItem_title | MainPageSlideConnectionPublished_at | createMainPageSlidePayload | updateMainPageSlidePayload | deleteMainPageSlidePayload | Services | ServicesConnection | ServicesAggregator | ServicesGroupBy | ServicesConnectionId | ServicesConnectionCreated_at | ServicesConnectionUpdated_at | ServicesConnectionService | ServicesConnectionPublished_at | createServicePayload | updateServicePayload | deleteServicePayload | SingleItem | SingleItemConnection | SingleItemAggregator | SingleItemAggregatorSum | SingleItemAggregatorAvg | SingleItemAggregatorMin | SingleItemAggregatorMax | SingleItemGroupBy | SingleItemConnectionId | SingleItemConnectionCreated_at | SingleItemConnectionUpdated_at | SingleItemConnectionItem_title | SingleItemConnectionPrice | SingleItemConnectionDescription | SingleItemConnectionSize | SingleItemConnectionPublished_at | createSingleItemPayload | updateSingleItemPayload | deleteSingleItemPayload | SizePrice | SizePriceConnection | SizePriceAggregator | SizePriceAggregatorSum | SizePriceAggregatorAvg | SizePriceAggregatorMin | SizePriceAggregatorMax | SizePriceGroupBy | SizePriceConnectionId | SizePriceConnectionCreated_at | SizePriceConnectionUpdated_at | SizePriceConnectionSize | SizePriceConnectionPrice | SizePriceConnectionRelated_item | SizePriceConnectionPublished_at | createSizePricePayload | updateSizePricePayload | deleteSizePricePayload | Tools | ToolsConnection | ToolsAggregator | ToolsGroupBy | ToolsConnectionId | ToolsConnectionCreated_at | ToolsConnectionUpdated_at | ToolsConnectionTool | ToolsConnectionPublished_at | createToolPayload | updateToolPayload | deleteToolPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
 
 input InputID {
   id: ID!
