@@ -1,4 +1,4 @@
-module.exports = [
+module.exports = {
       settings: {
         cors: {
           origin: [
@@ -15,7 +15,7 @@ module.exports = [
           },
         },
       },
-];
+    };
   
 
   // return {
