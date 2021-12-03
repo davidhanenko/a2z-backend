@@ -7,7 +7,7 @@ module.exports = ({ env }) => {
             'https://a2z-demo.herokuapp.com',
             'https://a2z-frontend-demo.vercel.app',
           ],
-          headers: ['*'],
+          headers: '*',
         },
         // 10 Mb max upload file size
         parser: {
