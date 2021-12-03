@@ -10,4 +10,11 @@ module.exports = {
     },
   },
   // parser for images upload
+  parser: {
+    enabled: true,
+    multipart: true,
+    formidable: {
+      maxFileSize: 10 * 1024 * 1024,
+    },
+  },
 };
