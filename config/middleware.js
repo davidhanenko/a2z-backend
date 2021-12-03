@@ -9,13 +9,7 @@ module.exports = ({ env }) => {
             'https://a2z-demo.herokuapp.com',
           ],
         },
-        load: {
-          before: ['responseTime', 'logger', 'cors', 'responses'],
-          order: [
-            "Define the middlewares' load order by putting their name in this array in the right order",
-          ],
-          after: ['parser', 'router'],
-        },
+      
         // 10 Mb max upload file size
         parser: {
           enabled: true,
