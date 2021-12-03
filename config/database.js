@@ -1,9 +1,8 @@
 const parse = require('pg-connection-string').parse;
 
 module.exports = ({ env }) => {
-
-  if(env('NODE_ENV') === 'production') {
-    const config = parse(process.env.DATABASE_URL)
+  if (env('NODE_ENV') === 'production') {
+    const config = parse(process.env.DATABASE_URL);
     return {
       defaultConnection: 'default',
       connections: {
@@ -20,9 +19,9 @@ module.exports = ({ env }) => {
               rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), // For self-signed certificates
             },
           },
-          options: {
-            ssl: env.bool('DATABASE_SSL', false),
-          },
+          // options: {
+          //   ssl: env.bool('DATABASE_SSL', false),
+          // },
         },
       },
     };
@@ -42,8 +41,8 @@ module.exports = ({ env }) => {
           password: env('DATABASE_PASSWORD'),
           ssl: env.bool('DATABASE_SSL', false),
         },
-        options: {}
+        options: {},
       },
     },
-  }
+  };
 };
