@@ -4,9 +4,10 @@ module.exports = ({ env }) => {
       settings: {
         cors: {
           enabled: true,
+          headers: '*',
           origin: [
-            'https://a2z-demo.herokuapp.com',
             'https://a2z-frontend-demo.vercel.app',
+            'https://a2z-demo.herokuapp.com',
           ],
         },
         // 10 Mb max upload file size
