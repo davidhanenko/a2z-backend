@@ -2,8 +2,12 @@ module.exports = ({ env }) => {
   if (env('NODE_ENV') === 'production') {
     return {
       settings: {
+        methods: ['GET', 'POST', 'HEAD'],
         cors: {
-          origin: ['https://a2z-frontend-demo.vercel.app'],
+          origin: [
+            'https://a2z-frontend-demo.vercel.app',
+            'https://a2z-demo.herokuapp.com',
+          ],
         },
         // 10 Mb max upload file size
         parser: {
