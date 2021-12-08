@@ -3,7 +3,7 @@ module.exports = ({ env }) => {
     return {
       settings: {
         cors: {
-          enabled: false,
+          enabled: true,
           origin: [
             '*'
             // 'https://a2z-frontend-demo.vercel.app',
