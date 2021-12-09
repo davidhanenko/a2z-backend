@@ -1,5 +1,5 @@
 module.exports = ({ env }) => {
-  return  {
+  return {
     upload: {
       provider: 'cloudinary',
       providerOptions: {
@@ -13,8 +13,8 @@ module.exports = ({ env }) => {
       actionOptions: {
         upload: {
           transformation: {
-              "width": 1920
-            },
+            width: 1920,
+          },
           fetch_format: 'auto',
           quality: 'auto',
           resource_type: 'auto',
@@ -23,4 +23,5 @@ module.exports = ({ env }) => {
         delete: {},
       },
     },
-}};
+  };
+};
