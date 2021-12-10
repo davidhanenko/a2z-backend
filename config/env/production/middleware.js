@@ -7,7 +7,7 @@ module.exports = {
       //       'http://localhost:1337',
       //       'http://localhost:7777',],
       origin: '*',
-      headers: '*',
+      headers: ['*'],
     },
   },
 };
