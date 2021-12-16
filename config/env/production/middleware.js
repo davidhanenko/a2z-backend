@@ -6,8 +6,7 @@ module.exports = {
         'https://a2z-backend-demo.herokuapp.com',
         'http://localhost:1337',
         'http://localhost:7777',
-      ],
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD'],
+      ]
     },
   },
 };
