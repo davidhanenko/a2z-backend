@@ -9,7 +9,9 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "strapi-plugin-graphql": "^3.6.5"
+  },
   "dependencies": {
     "knex": "0.21.18",
     "pg": "^8.5.1",
