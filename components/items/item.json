@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_items_items",
+  "info": {
+    "name": "item",
+    "icon": "sitemap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "string"
+    },
+    "items_categories": {
+      "collection": "items-category"
+    }
+  }
+}

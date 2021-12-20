@@ -2,8 +2,7 @@
   "kind": "collectionType",
   "collectionName": "items",
   "info": {
-    "name": "items",
-    "description": ""
+    "name": "items"
   },
   "options": {
     "increments": true,

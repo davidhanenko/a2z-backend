@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_items_items_categories",
+  "info": {
+    "name": "items category",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "item_category": {
+      "type": "string"
+    }
+  }
+}
