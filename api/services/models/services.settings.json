@@ -16,7 +16,9 @@
       "type": "string"
     },
     "items": {
-      "collection": "items"
+      "collection": "items",
+      "via": "services",
+      "dominant": true
     }
   }
 }

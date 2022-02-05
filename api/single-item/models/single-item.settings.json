@@ -41,6 +41,10 @@
       "components": [
         "prices.size-price"
       ]
+    },
+    "items_categories": {
+      "via": "single_items",
+      "collection": "items-category"
     }
   }
 }

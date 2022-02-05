@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "items",
   "info": {
-    "name": "items"
+    "name": "items",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -15,7 +16,13 @@
       "type": "string"
     },
     "items_categories": {
-      "collection": "items-category"
+      "collection": "items-category",
+      "via": "items",
+      "dominant": true
+    },
+    "services": {
+      "via": "items",
+      "collection": "services"
     }
   }
 }

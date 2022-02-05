@@ -16,7 +16,13 @@
       "type": "string"
     },
     "single_items": {
-      "collection": "single-item"
+      "collection": "single-item",
+      "via": "items_categories",
+      "dominant": true
+    },
+    "items": {
+      "via": "items_categories",
+      "collection": "items"
     }
   }
 }
