@@ -22,4 +22,20 @@ module.exports = ({ env }) => ({
       delete: {},
     },
   },
+
+  email: {
+    provider: 'nodemailer',
+    providerOptions: {
+      host: env('SMTP_HOST'),
+      port: env('SMTP_PORT', 587),
+      auth: {
+        user: env('SMTP_USERNAME'),
+        pass: env('SMTP_PASSWORD'),
+      },
+    },
+    settings: {
+      defaultFrom: 'a2z@example.com',
+      defaultReplyTo: 'a2z1@example.com',
+    },
+  },
 });

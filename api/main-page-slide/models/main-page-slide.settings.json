@@ -54,7 +54,7 @@
       "required": false,
       "pluginOptions": {}
     },
-    "item_title": {
+    "service": {
       "type": "string"
     }
   }
