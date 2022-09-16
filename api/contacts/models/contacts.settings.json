@@ -39,6 +39,12 @@
     },
     "headline_text": {
       "type": "richtext"
+    },
+    "facebook_link": {
+      "type": "string"
+    },
+    "instagram_link": {
+      "type": "string"
     }
   }
 }

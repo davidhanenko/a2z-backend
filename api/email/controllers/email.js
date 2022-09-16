@@ -3,6 +3,7 @@
 module.exports = {
   send: async ctx => {
     const body = ctx.request.body;
+    
     const sendTo = body.to;
     const from = body.from;
     const subject = body.subject;
@@ -14,7 +15,7 @@ module.exports = {
     try {
       const emailOptions = {
         to: sendTo,
-        subject: from,
+        from: from,
         subject: subject,
         html: body.text,
       };
