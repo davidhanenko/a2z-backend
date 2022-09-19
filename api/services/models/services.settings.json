@@ -19,6 +19,9 @@
       "collection": "items",
       "via": "services",
       "dominant": true
+    },
+    "meta_description": {
+      "type": "richtext"
     }
   }
 }
