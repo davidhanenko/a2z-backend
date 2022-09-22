@@ -16,8 +16,8 @@
       "type": "string"
     },
     "single_items": {
-      "collection": "single-item",
       "via": "items_categories",
+      "collection": "single-item",
       "dominant": true
     },
     "items": {

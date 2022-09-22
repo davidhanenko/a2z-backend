@@ -1,8 +1,23 @@
 'use strict';
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#lifecycle-hooks)
- * to customize this model
- */
+module.exports = {
+  lifecycles: {
+    afterUpdate(result, data) {
+      if (result.price) {
+        result.minPrice = result.price;
+      } else {
+        result.size_price.sort((a, b) => a.price - b.price);
+        result.minPrice = result.size_price[0].price;
+      }
+    },
 
-module.exports = {};
+    afterCreate(result, data) {
+      if (result.price) {
+        result.minPrice = result.price;
+      } else {
+        result.size_price.sort((a, b) => a.price - b.price);
+        result.minPrice = result.size_price[0].price;
+      }
+    },
+  },
+};
