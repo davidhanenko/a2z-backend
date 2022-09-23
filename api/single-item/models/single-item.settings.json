@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "item_title": {
+    "itemTitle": {
       "type": "string"
     },
     "price": {
@@ -36,7 +36,7 @@
     "size": {
       "type": "string"
     },
-    "size_price": {
+    "sizePrice": {
       "type": "dynamiczone",
       "components": [
         "prices.size-price"

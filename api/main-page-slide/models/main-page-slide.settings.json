@@ -18,7 +18,7 @@
     "description": {
       "type": "string"
     },
-    "bg_image": {
+    "bgImage": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -30,7 +30,7 @@
       "required": false,
       "pluginOptions": {}
     },
-    "image_1": {
+    "image1": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -42,7 +42,7 @@
       "required": false,
       "pluginOptions": {}
     },
-    "image_2": {
+    "image2": {
       "model": "file",
       "via": "related",
       "allowedTypes": [

@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "category_title": {
+    "categoryTitle": {
       "type": "string"
     },
     "single_items": {

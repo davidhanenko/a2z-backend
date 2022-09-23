@@ -16,8 +16,8 @@
       "type": "string"
     },
     "items_categories": {
-      "collection": "items-category",
       "via": "items",
+      "collection": "items-category",
       "dominant": true
     },
     "services": {

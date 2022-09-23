@@ -2,21 +2,21 @@
 
 module.exports = {
   lifecycles: {
-    afterUpdate(result, data) {
-      if (result.price) {
-        result.minPrice = result.price;
+    async beforeUpdate(params, data) {
+      if (data.price) {
+        data.minPrice = await data.price;
       } else {
-        result.size_price.sort((a, b) => a.price - b.price);
-        result.minPrice = result.size_price[0].price;
+        data.sizePrice.sort((a, b) => a.price - b.price);
+        data.minPrice = await data.sizePrice[0].price;
       }
     },
 
-    afterCreate(result, data) {
-      if (result.price) {
-        result.minPrice = result.price;
+    beforeCreate(data) {
+      if (data.price) {
+        data.minPrice = data.price;
       } else {
-        result.size_price.sort((a, b) => a.price - b.price);
-        result.minPrice = result.size_price[0].price;
+        data.sizePrice.sort((a, b) => a.price - b.price);
+        data.minPrice = data.sizePrice[0].price;
       }
     },
   },

@@ -20,7 +20,7 @@
       "via": "services",
       "dominant": true
     },
-    "meta_description": {
+    "metaDescription": {
       "type": "richtext"
     }
   }

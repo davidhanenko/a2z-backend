@@ -12,38 +12,38 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "telephone_1": {
+    "telephone1": {
       "type": "string"
     },
-    "telephone_2": {
+    "telephone2": {
       "type": "string"
     },
     "hours": {
       "type": "string"
     },
-    "address_line1": {
+    "addressLine1": {
       "type": "string"
     },
-    "address_line2": {
+    "addressLine2": {
       "type": "string"
     },
     "email": {
       "type": "email"
     },
-    "email_2": {
+    "email2": {
       "type": "email",
       "required": false
     },
-    "headline_head": {
+    "headlineHead": {
       "type": "richtext"
     },
-    "headline_text": {
+    "headlineText": {
       "type": "richtext"
     },
-    "facebook_link": {
+    "facebookLink": {
       "type": "string"
     },
-    "instagram_link": {
+    "instagramLink": {
       "type": "string"
     }
   }

@@ -45,49 +45,49 @@ type Contacts {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  telephone_1: String
-  telephone_2: String
+  telephone1: String
+  telephone2: String
   hours: String
-  address_line1: String
-  address_line2: String
+  addressLine1: String
+  addressLine2: String
   email: String
-  email_2: String
-  headline_head: String
-  headline_text: String
-  facebook_link: String
-  instagram_link: String
+  email2: String
+  headlineHead: String
+  headlineText: String
+  facebookLink: String
+  instagramLink: String
   published_at: DateTime
 }
 
 input ContactInput {
-  telephone_1: String
-  telephone_2: String
+  telephone1: String
+  telephone2: String
   hours: String
-  address_line1: String
-  address_line2: String
+  addressLine1: String
+  addressLine2: String
   email: String
-  email_2: String
-  headline_head: String
-  headline_text: String
-  facebook_link: String
-  instagram_link: String
+  email2: String
+  headlineHead: String
+  headlineText: String
+  facebookLink: String
+  instagramLink: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
 input editContactInput {
-  telephone_1: String
-  telephone_2: String
+  telephone1: String
+  telephone2: String
   hours: String
-  address_line1: String
-  address_line2: String
+  addressLine1: String
+  addressLine2: String
   email: String
-  email_2: String
-  headline_head: String
-  headline_text: String
-  facebook_link: String
-  instagram_link: String
+  email2: String
+  headlineHead: String
+  headlineText: String
+  facebookLink: String
+  instagramLink: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -109,7 +109,7 @@ type ItemsCategory {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  category_title: String
+  categoryTitle: String
   published_at: DateTime
   single_items(sort: String, limit: Int, start: Int, where: JSON): [SingleItem]
   items(sort: String, limit: Int, start: Int, where: JSON): [Items]
@@ -130,7 +130,7 @@ type ItemsCategoryGroupBy {
   id: [ItemsCategoryConnectionId]
   created_at: [ItemsCategoryConnectionCreated_at]
   updated_at: [ItemsCategoryConnectionUpdated_at]
-  category_title: [ItemsCategoryConnectionCategory_title]
+  categoryTitle: [ItemsCategoryConnectionCategoryTitle]
   published_at: [ItemsCategoryConnectionPublished_at]
 }
 
@@ -149,7 +149,7 @@ type ItemsCategoryConnectionUpdated_at {
   connection: ItemsCategoryConnection
 }
 
-type ItemsCategoryConnectionCategory_title {
+type ItemsCategoryConnectionCategoryTitle {
   key: String
   connection: ItemsCategoryConnection
 }
@@ -160,7 +160,7 @@ type ItemsCategoryConnectionPublished_at {
 }
 
 input ItemsCategoryInput {
-  category_title: String
+  categoryTitle: String
   single_items: [ID]
   items: [ID]
   published_at: DateTime
@@ -169,7 +169,7 @@ input ItemsCategoryInput {
 }
 
 input editItemsCategoryInput {
-  category_title: String
+  categoryTitle: String
   single_items: [ID]
   items: [ID]
   published_at: DateTime
@@ -305,9 +305,9 @@ type MainPageSlide {
   updated_at: DateTime!
   slogan: String
   description: String
-  bg_image: UploadFile
-  image_1: UploadFile
-  image_2: UploadFile
+  bgImage: UploadFile
+  image1: UploadFile
+  image2: UploadFile
   service: String
   published_at: DateTime
 }
@@ -329,9 +329,9 @@ type MainPageSlideGroupBy {
   updated_at: [MainPageSlideConnectionUpdated_at]
   slogan: [MainPageSlideConnectionSlogan]
   description: [MainPageSlideConnectionDescription]
-  bg_image: [MainPageSlideConnectionBg_image]
-  image_1: [MainPageSlideConnectionImage_1]
-  image_2: [MainPageSlideConnectionImage_2]
+  bgImage: [MainPageSlideConnectionBgImage]
+  image1: [MainPageSlideConnectionImage1]
+  image2: [MainPageSlideConnectionImage2]
   service: [MainPageSlideConnectionService]
   published_at: [MainPageSlideConnectionPublished_at]
 }
@@ -361,17 +361,17 @@ type MainPageSlideConnectionDescription {
   connection: MainPageSlideConnection
 }
 
-type MainPageSlideConnectionBg_image {
+type MainPageSlideConnectionBgImage {
   key: ID
   connection: MainPageSlideConnection
 }
 
-type MainPageSlideConnectionImage_1 {
+type MainPageSlideConnectionImage1 {
   key: ID
   connection: MainPageSlideConnection
 }
 
-type MainPageSlideConnectionImage_2 {
+type MainPageSlideConnectionImage2 {
   key: ID
   connection: MainPageSlideConnection
 }
@@ -389,9 +389,9 @@ type MainPageSlideConnectionPublished_at {
 input MainPageSlideInput {
   slogan: String
   description: String
-  bg_image: ID
-  image_1: ID
-  image_2: ID
+  bgImage: ID
+  image1: ID
+  image2: ID
   service: String
   published_at: DateTime
   created_by: ID
@@ -401,9 +401,9 @@ input MainPageSlideInput {
 input editMainPageSlideInput {
   slogan: String
   description: String
-  bg_image: ID
-  image_1: ID
-  image_2: ID
+  bgImage: ID
+  image1: ID
+  image2: ID
   service: String
   published_at: DateTime
   created_by: ID
@@ -440,7 +440,7 @@ type Services {
   created_at: DateTime!
   updated_at: DateTime!
   service: String
-  meta_description: String
+  metaDescription: String
   published_at: DateTime
   items(sort: String, limit: Int, start: Int, where: JSON): [Items]
 }
@@ -461,7 +461,7 @@ type ServicesGroupBy {
   created_at: [ServicesConnectionCreated_at]
   updated_at: [ServicesConnectionUpdated_at]
   service: [ServicesConnectionService]
-  meta_description: [ServicesConnectionMeta_description]
+  metaDescription: [ServicesConnectionMetaDescription]
   published_at: [ServicesConnectionPublished_at]
 }
 
@@ -485,7 +485,7 @@ type ServicesConnectionService {
   connection: ServicesConnection
 }
 
-type ServicesConnectionMeta_description {
+type ServicesConnectionMetaDescription {
   key: String
   connection: ServicesConnection
 }
@@ -498,7 +498,7 @@ type ServicesConnectionPublished_at {
 input ServiceInput {
   service: String
   items: [ID]
-  meta_description: String
+  metaDescription: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -507,7 +507,7 @@ input ServiceInput {
 input editServiceInput {
   service: String
   items: [ID]
-  meta_description: String
+  metaDescription: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -540,18 +540,18 @@ type deleteServicePayload {
 
 union SingleItemSizePriceDynamicZone = ComponentPricesSizePrice
 
-"""Input type for dynamic zone size_price of SingleItem"""
+"""Input type for dynamic zone sizePrice of SingleItem"""
 scalar SingleItemSizePriceDynamicZoneInput
 
 type SingleItem {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  item_title: String
+  itemTitle: String
   price: Float
   description: String
   size: String
-  size_price: [SingleItemSizePriceDynamicZone]
+  sizePrice: [SingleItemSizePriceDynamicZone]
   minPrice: Int
   published_at: DateTime
   image(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
@@ -597,7 +597,7 @@ type SingleItemGroupBy {
   id: [SingleItemConnectionId]
   created_at: [SingleItemConnectionCreated_at]
   updated_at: [SingleItemConnectionUpdated_at]
-  item_title: [SingleItemConnectionItem_title]
+  itemTitle: [SingleItemConnectionItemTitle]
   price: [SingleItemConnectionPrice]
   description: [SingleItemConnectionDescription]
   size: [SingleItemConnectionSize]
@@ -620,7 +620,7 @@ type SingleItemConnectionUpdated_at {
   connection: SingleItemConnection
 }
 
-type SingleItemConnectionItem_title {
+type SingleItemConnectionItemTitle {
   key: String
   connection: SingleItemConnection
 }
@@ -651,12 +651,12 @@ type SingleItemConnectionPublished_at {
 }
 
 input SingleItemInput {
-  item_title: String
+  itemTitle: String
   price: Float
   image: [ID]
   description: String
   size: String
-  size_price: [SingleItemSizePriceDynamicZoneInput!]
+  sizePrice: [SingleItemSizePriceDynamicZoneInput!]
   items_categories: [ID]
   minPrice: Int
   published_at: DateTime
@@ -665,12 +665,12 @@ input SingleItemInput {
 }
 
 input editSingleItemInput {
-  item_title: String
+  itemTitle: String
   price: Float
   image: [ID]
   description: String
   size: String
-  size_price: [SingleItemSizePriceDynamicZoneInput!]
+  sizePrice: [SingleItemSizePriceDynamicZoneInput!]
   items_categories: [ID]
   minPrice: Int
   published_at: DateTime
@@ -1341,7 +1341,7 @@ input editComponentPricesSizePriceInput {
   price: Float
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Contacts | updateContactPayload | deleteContactPayload | ItemsCategory | ItemsCategoryConnection | ItemsCategoryAggregator | ItemsCategoryGroupBy | ItemsCategoryConnectionId | ItemsCategoryConnectionCreated_at | ItemsCategoryConnectionUpdated_at | ItemsCategoryConnectionCategory_title | ItemsCategoryConnectionPublished_at | createItemsCategoryPayload | updateItemsCategoryPayload | deleteItemsCategoryPayload | Items | ItemsConnection | ItemsAggregator | ItemsGroupBy | ItemsConnectionId | ItemsConnectionCreated_at | ItemsConnectionUpdated_at | ItemsConnectionTitle | ItemsConnectionPublished_at | createItemPayload | updateItemPayload | deleteItemPayload | MainPageSlide | MainPageSlideConnection | MainPageSlideAggregator | MainPageSlideGroupBy | MainPageSlideConnectionId | MainPageSlideConnectionCreated_at | MainPageSlideConnectionUpdated_at | MainPageSlideConnectionSlogan | MainPageSlideConnectionDescription | MainPageSlideConnectionBg_image | MainPageSlideConnectionImage_1 | MainPageSlideConnectionImage_2 | MainPageSlideConnectionService | MainPageSlideConnectionPublished_at | createMainPageSlidePayload | updateMainPageSlidePayload | deleteMainPageSlidePayload | Services | ServicesConnection | ServicesAggregator | ServicesGroupBy | ServicesConnectionId | ServicesConnectionCreated_at | ServicesConnectionUpdated_at | ServicesConnectionService | ServicesConnectionMeta_description | ServicesConnectionPublished_at | createServicePayload | updateServicePayload | deleteServicePayload | SingleItem | SingleItemConnection | SingleItemAggregator | SingleItemAggregatorSum | SingleItemAggregatorAvg | SingleItemAggregatorMin | SingleItemAggregatorMax | SingleItemGroupBy | SingleItemConnectionId | SingleItemConnectionCreated_at | SingleItemConnectionUpdated_at | SingleItemConnectionItem_title | SingleItemConnectionPrice | SingleItemConnectionDescription | SingleItemConnectionSize | SingleItemConnectionMinPrice | SingleItemConnectionPublished_at | createSingleItemPayload | updateSingleItemPayload | deleteSingleItemPayload | Tags | updateTagPayload | deleteTagPayload | Tools | ToolsConnection | ToolsAggregator | ToolsGroupBy | ToolsConnectionId | ToolsConnectionCreated_at | ToolsConnectionUpdated_at | ToolsConnectionTool | ToolsConnectionPublished_at | createToolPayload | updateToolPayload | deleteToolPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentMetaMetatags | ComponentPricesSizePrice
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Contacts | updateContactPayload | deleteContactPayload | ItemsCategory | ItemsCategoryConnection | ItemsCategoryAggregator | ItemsCategoryGroupBy | ItemsCategoryConnectionId | ItemsCategoryConnectionCreated_at | ItemsCategoryConnectionUpdated_at | ItemsCategoryConnectionCategoryTitle | ItemsCategoryConnectionPublished_at | createItemsCategoryPayload | updateItemsCategoryPayload | deleteItemsCategoryPayload | Items | ItemsConnection | ItemsAggregator | ItemsGroupBy | ItemsConnectionId | ItemsConnectionCreated_at | ItemsConnectionUpdated_at | ItemsConnectionTitle | ItemsConnectionPublished_at | createItemPayload | updateItemPayload | deleteItemPayload | MainPageSlide | MainPageSlideConnection | MainPageSlideAggregator | MainPageSlideGroupBy | MainPageSlideConnectionId | MainPageSlideConnectionCreated_at | MainPageSlideConnectionUpdated_at | MainPageSlideConnectionSlogan | MainPageSlideConnectionDescription | MainPageSlideConnectionBgImage | MainPageSlideConnectionImage1 | MainPageSlideConnectionImage2 | MainPageSlideConnectionService | MainPageSlideConnectionPublished_at | createMainPageSlidePayload | updateMainPageSlidePayload | deleteMainPageSlidePayload | Services | ServicesConnection | ServicesAggregator | ServicesGroupBy | ServicesConnectionId | ServicesConnectionCreated_at | ServicesConnectionUpdated_at | ServicesConnectionService | ServicesConnectionMetaDescription | ServicesConnectionPublished_at | createServicePayload | updateServicePayload | deleteServicePayload | SingleItem | SingleItemConnection | SingleItemAggregator | SingleItemAggregatorSum | SingleItemAggregatorAvg | SingleItemAggregatorMin | SingleItemAggregatorMax | SingleItemGroupBy | SingleItemConnectionId | SingleItemConnectionCreated_at | SingleItemConnectionUpdated_at | SingleItemConnectionItemTitle | SingleItemConnectionPrice | SingleItemConnectionDescription | SingleItemConnectionSize | SingleItemConnectionMinPrice | SingleItemConnectionPublished_at | createSingleItemPayload | updateSingleItemPayload | deleteSingleItemPayload | Tags | updateTagPayload | deleteTagPayload | Tools | ToolsConnection | ToolsAggregator | ToolsGroupBy | ToolsConnectionId | ToolsConnectionCreated_at | ToolsConnectionUpdated_at | ToolsConnectionTool | ToolsConnectionPublished_at | createToolPayload | updateToolPayload | deleteToolPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentMetaMetatags | ComponentPricesSizePrice
 
 input InputID {
   id: ID!
