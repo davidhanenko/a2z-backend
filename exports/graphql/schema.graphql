@@ -743,97 +743,6 @@ type deleteTagPayload {
   tag: Tags
 }
 
-type Tools {
-  id: ID!
-  created_at: DateTime!
-  updated_at: DateTime!
-  tool: String
-  published_at: DateTime
-}
-
-type ToolsConnection {
-  values: [Tools]
-  groupBy: ToolsGroupBy
-  aggregate: ToolsAggregator
-}
-
-type ToolsAggregator {
-  count: Int
-  totalCount: Int
-}
-
-type ToolsGroupBy {
-  id: [ToolsConnectionId]
-  created_at: [ToolsConnectionCreated_at]
-  updated_at: [ToolsConnectionUpdated_at]
-  tool: [ToolsConnectionTool]
-  published_at: [ToolsConnectionPublished_at]
-}
-
-type ToolsConnectionId {
-  key: ID
-  connection: ToolsConnection
-}
-
-type ToolsConnectionCreated_at {
-  key: DateTime
-  connection: ToolsConnection
-}
-
-type ToolsConnectionUpdated_at {
-  key: DateTime
-  connection: ToolsConnection
-}
-
-type ToolsConnectionTool {
-  key: String
-  connection: ToolsConnection
-}
-
-type ToolsConnectionPublished_at {
-  key: DateTime
-  connection: ToolsConnection
-}
-
-input ToolInput {
-  tool: String
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input editToolInput {
-  tool: String
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input createToolInput {
-  data: ToolInput
-}
-
-type createToolPayload {
-  tool: Tools
-}
-
-input updateToolInput {
-  where: InputID
-  data: editToolInput
-}
-
-type updateToolPayload {
-  tool: Tools
-}
-
-input deleteToolInput {
-  where: InputID
-}
-
-type deleteToolPayload {
-  tool: Tools
-}
-
 type I18NLocale {
   id: ID!
   created_at: DateTime!
@@ -1341,7 +1250,7 @@ input editComponentPricesSizePriceInput {
   price: Float
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Contacts | updateContactPayload | deleteContactPayload | ItemsCategory | ItemsCategoryConnection | ItemsCategoryAggregator | ItemsCategoryGroupBy | ItemsCategoryConnectionId | ItemsCategoryConnectionCreated_at | ItemsCategoryConnectionUpdated_at | ItemsCategoryConnectionCategoryTitle | ItemsCategoryConnectionPublished_at | createItemsCategoryPayload | updateItemsCategoryPayload | deleteItemsCategoryPayload | Items | ItemsConnection | ItemsAggregator | ItemsGroupBy | ItemsConnectionId | ItemsConnectionCreated_at | ItemsConnectionUpdated_at | ItemsConnectionTitle | ItemsConnectionPublished_at | createItemPayload | updateItemPayload | deleteItemPayload | MainPageSlide | MainPageSlideConnection | MainPageSlideAggregator | MainPageSlideGroupBy | MainPageSlideConnectionId | MainPageSlideConnectionCreated_at | MainPageSlideConnectionUpdated_at | MainPageSlideConnectionSlogan | MainPageSlideConnectionDescription | MainPageSlideConnectionBgImage | MainPageSlideConnectionImage1 | MainPageSlideConnectionImage2 | MainPageSlideConnectionService | MainPageSlideConnectionPublished_at | createMainPageSlidePayload | updateMainPageSlidePayload | deleteMainPageSlidePayload | Services | ServicesConnection | ServicesAggregator | ServicesGroupBy | ServicesConnectionId | ServicesConnectionCreated_at | ServicesConnectionUpdated_at | ServicesConnectionService | ServicesConnectionMetaDescription | ServicesConnectionPublished_at | createServicePayload | updateServicePayload | deleteServicePayload | SingleItem | SingleItemConnection | SingleItemAggregator | SingleItemAggregatorSum | SingleItemAggregatorAvg | SingleItemAggregatorMin | SingleItemAggregatorMax | SingleItemGroupBy | SingleItemConnectionId | SingleItemConnectionCreated_at | SingleItemConnectionUpdated_at | SingleItemConnectionItemTitle | SingleItemConnectionPrice | SingleItemConnectionDescription | SingleItemConnectionSize | SingleItemConnectionMinPrice | SingleItemConnectionPublished_at | createSingleItemPayload | updateSingleItemPayload | deleteSingleItemPayload | Tags | updateTagPayload | deleteTagPayload | Tools | ToolsConnection | ToolsAggregator | ToolsGroupBy | ToolsConnectionId | ToolsConnectionCreated_at | ToolsConnectionUpdated_at | ToolsConnectionTool | ToolsConnectionPublished_at | createToolPayload | updateToolPayload | deleteToolPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentMetaMetatags | ComponentPricesSizePrice
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Contacts | updateContactPayload | deleteContactPayload | ItemsCategory | ItemsCategoryConnection | ItemsCategoryAggregator | ItemsCategoryGroupBy | ItemsCategoryConnectionId | ItemsCategoryConnectionCreated_at | ItemsCategoryConnectionUpdated_at | ItemsCategoryConnectionCategoryTitle | ItemsCategoryConnectionPublished_at | createItemsCategoryPayload | updateItemsCategoryPayload | deleteItemsCategoryPayload | Items | ItemsConnection | ItemsAggregator | ItemsGroupBy | ItemsConnectionId | ItemsConnectionCreated_at | ItemsConnectionUpdated_at | ItemsConnectionTitle | ItemsConnectionPublished_at | createItemPayload | updateItemPayload | deleteItemPayload | MainPageSlide | MainPageSlideConnection | MainPageSlideAggregator | MainPageSlideGroupBy | MainPageSlideConnectionId | MainPageSlideConnectionCreated_at | MainPageSlideConnectionUpdated_at | MainPageSlideConnectionSlogan | MainPageSlideConnectionDescription | MainPageSlideConnectionBgImage | MainPageSlideConnectionImage1 | MainPageSlideConnectionImage2 | MainPageSlideConnectionService | MainPageSlideConnectionPublished_at | createMainPageSlidePayload | updateMainPageSlidePayload | deleteMainPageSlidePayload | Services | ServicesConnection | ServicesAggregator | ServicesGroupBy | ServicesConnectionId | ServicesConnectionCreated_at | ServicesConnectionUpdated_at | ServicesConnectionService | ServicesConnectionMetaDescription | ServicesConnectionPublished_at | createServicePayload | updateServicePayload | deleteServicePayload | SingleItem | SingleItemConnection | SingleItemAggregator | SingleItemAggregatorSum | SingleItemAggregatorAvg | SingleItemAggregatorMin | SingleItemAggregatorMax | SingleItemGroupBy | SingleItemConnectionId | SingleItemConnectionCreated_at | SingleItemConnectionUpdated_at | SingleItemConnectionItemTitle | SingleItemConnectionPrice | SingleItemConnectionDescription | SingleItemConnectionSize | SingleItemConnectionMinPrice | SingleItemConnectionPublished_at | createSingleItemPayload | updateSingleItemPayload | deleteSingleItemPayload | Tags | updateTagPayload | deleteTagPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentMetaMetatags | ComponentPricesSizePrice
 
 input InputID {
   id: ID!
@@ -1377,9 +1286,6 @@ type Query {
   singleItems(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [SingleItem]
   singleItemsConnection(sort: String, limit: Int, start: Int, where: JSON): SingleItemConnection
   tag(publicationState: PublicationState): Tags
-  tool(id: ID!, publicationState: PublicationState): Tools
-  tools(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Tools]
-  toolsConnection(sort: String, limit: Int, start: Int, where: JSON): ToolsConnection
   files(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UploadFile]
   filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
   role(id: ID!, publicationState: PublicationState): UsersPermissionsRole
@@ -1415,9 +1321,6 @@ type Mutation {
   deleteSingleItem(input: deleteSingleItemInput): deleteSingleItemPayload
   updateTag(input: updateTagInput): updateTagPayload
   deleteTag: deleteTagPayload
-  createTool(input: createToolInput): createToolPayload
-  updateTool(input: updateToolInput): updateToolPayload
-  deleteTool(input: deleteToolInput): deleteToolPayload
 
   """Delete one file"""
   deleteFile(input: deleteFileInput): deleteFilePayload
